@@ -18,38 +18,43 @@
 
 	<div class="card-group">
 		<div class="card">
-			
 			<div class="card-body">
-				<h5 class="card-title" th:text="${evol1.species.name}"></h5>
-				<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol1.sprites.front_default}" width="200"
+				<h5 class="card-title text-center" th:text="${evol1.species.name}"></h5>
+				<div class="card-text text-center">
+					<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol1.sprites.front_default}" width="200"
 					height="200" />
+				</div>
 			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
+			<div class="card-footer text-center">
+				<a th:href="@{/info/{name}(name=${evol1.species.name})}" class="btn btn-danger text-white">Ver Detalle</a>
 			</div>
 		</div>
 		
 		<div class="card" th:if="${!(evol2 == null)}">
 			
 			<div class="card-body">
-				<h5 class="card-title" th:text="${evol2.species.name}"></h5>
-				<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol2.sprites.front_default}" width="200"
+				<h5 class="card-title text-center" th:text="${evol2.species.name}"></h5>
+				<div class="card-text text-center">
+					<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol2.sprites.front_default}" width="200"
 					height="200" />
+				</div>
 			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
+			<div class="card-footer text-center">
+				<a th:href="@{/info/{name}(name=${evol2.species.name})}" class="btn btn-danger text-white">Ver Detalle</a>
 			</div>
 		</div>
 		
 		<div class="card" th:if="${!(evol3 == null)}">
 			
 			<div class="card-body">
-				<h5 class="card-title" th:text="${evol3.species.name}"></h5>
-				<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol3.sprites.front_default}" width="200"
+				<h5 class="card-title text-center" th:text="${evol3.species.name}"></h5>
+				<div class="card-text text-center">
+					<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol3.sprites.front_default}" width="200"
 					height="200" />
+				</div>
 			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
+			<div class="card-footer text-center">
+				<a th:href="@{/info/{name}(name=${evol3.species.name})}" class="btn btn-danger text-white">Ver Detalle</a>
 			</div>
 		</div>
 		
