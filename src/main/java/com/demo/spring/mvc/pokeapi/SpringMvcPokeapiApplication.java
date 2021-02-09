@@ -10,6 +10,4 @@ public class SpringMvcPokeapiApplication {
 		SpringApplication.run(SpringMvcPokeapiApplication.class, args);
 	}
 	
-	
-
 }

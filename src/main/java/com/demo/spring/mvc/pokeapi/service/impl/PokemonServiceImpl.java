@@ -8,19 +8,23 @@ import com.demo.spring.mvc.pokeapi.models.Pokemon;
 import com.demo.spring.mvc.pokeapi.service.api.PokemonServiceAPI;
 
 @Service
-public class PokemonServiceImpl implements PokemonServiceAPI{
+public class PokemonServiceImpl implements PokemonServiceAPI {
 
 	@Autowired
 	private RestTemplate restTemplate;
-	
+
 	@Override
 	public Pokemon getPokemonByName(String name) {
 		// TODO Auto-generated method stub
-		
-		Pokemon pokemon = restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon/"+name,
-				Pokemon.class);
+		Pokemon pokemon = null;
+
+		try {
+			pokemon = restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon/" + name, Pokemon.class);
+		} catch (Exception e) {
+			return null;
+		}
 		
 		return pokemon;
 	}
-	
+
 }
