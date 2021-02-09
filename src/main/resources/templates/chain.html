@@ -9,8 +9,51 @@
 	th:href="@{/css/bootstrap.css}">
 </head>
 <body>
-	
+	<div class="card text-center">
+		<div class="card-header bg-danger">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg">
+		</div>
+	</div>
 
+	<div class="card-group">
+		<div class="card">
+			
+			<div class="card-body">
+				<h5 class="card-title" th:text="${evol1.species.name}"></h5>
+				<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol1.sprites.front_default}" width="200"
+					height="200" />
+			</div>
+			<div class="card-footer">
+				<small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		</div>
+		
+		<div class="card" th:if="${!(evol2 == null)}">
+			
+			<div class="card-body">
+				<h5 class="card-title" th:text="${evol2.species.name}"></h5>
+				<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol2.sprites.front_default}" width="200"
+					height="200" />
+			</div>
+			<div class="card-footer">
+				<small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		</div>
+		
+		<div class="card" th:if="${!(evol3 == null)}">
+			
+			<div class="card-body">
+				<h5 class="card-title" th:text="${evol3.species.name}"></h5>
+				<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${evol3.sprites.front_default}" width="200"
+					height="200" />
+			</div>
+			<div class="card-footer">
+				<small class="text-muted">Last updated 3 mins ago</small>
+			</div>
+		</div>
+		
+	</div>
 
 </body>
 </html>

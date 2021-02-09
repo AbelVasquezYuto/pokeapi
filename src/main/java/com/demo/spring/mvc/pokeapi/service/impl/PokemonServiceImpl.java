@@ -22,5 +22,5 @@ public class PokemonServiceImpl implements PokemonServiceAPI{
 		
 		return pokemon;
 	}
-
+	
 }
