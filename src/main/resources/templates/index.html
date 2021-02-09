@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>POKEAPI</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootsstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="card text-center">
+		<div class="card-header bg-danger">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg">
+		</div>
+	</div>
+	<div class="text-center pt-3 pb-3 bg-dark">
+		<a class="btn btn-success" th:href="@{|/?page=${pagAnterior}|}" th:classappend="${previous == null ? 'disabled': ''}">Atras</a>
+		<a class="btn btn-success" th:href="@{|/?page=${pagSiguiente}|}" th:classappend="${next == null ? 'disabled': ''}">Siguiente</a>
+	</div>
+	<div class="container">
+		<table class="table table-striped table-bordered text-center">
+			<thead>
+				<tr>
+					<th>POKEMON</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="pokemon : ${list}">
+					<td th:text="${pokemon.name}">
+					<td><a class="btn btn-info"
+						th:href="@{/info/{name}(name=${pokemon.name})}">Ver detalles</a></td>
+					<td><a class="btn btn-secondary"
+						th:href="@{chain?url=} + ${pokemon.url}">Ver cadena
+							evolutiva</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

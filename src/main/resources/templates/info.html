@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Personas</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootsstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	
+		<div class="card text-center">
+			<div class="card-header bg-danger">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg">
+			</div>
+			<div class="card-body">
+				<h5 class="card-title" th:text="${pokemon.species.name}"></h5>
+				<img style="border: 1px solid; color: red; border-radius: 50%;" th:src="${pokemon.sprites.front_default}" width="200"
+					height="200" />
+			
+				<p class="card-text mt-3">
+					<span class="font-weight-bold">Altura:</span>
+					<span th:text="${pokemon.height}"></span><span>''</span>
+				</p>
+				<p class="card-text">
+					<span class="font-weight-bold">Peso:</span>
+					<span th:text="${pokemon.weight}"></span>
+				</p>
+				<p class="card-text">
+					<span class="font-weight-bold">Experiencia base:</span>
+					<span th:text="${pokemon.base_experience}"></span>
+				</p>
+				<p class="card-text">
+					<span class="font-weight-bold">Habilidades:</span>
+				</p>
+				<p class="card-text" th:each="habilidades : ${pokemon.abilities}">
+					<span th:text="${habilidades.ability.name}"></span>
+				</p>
+			</div>
+			<div class="card-footer bg-dark"><span class="font-weight-bold text-white">@abelvasquezyuto</span></div>
+		</div>
+
+</body>
+</html>
